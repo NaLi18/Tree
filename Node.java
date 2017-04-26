@@ -35,5 +35,7 @@ public class Node{
   public String getValue(){
     return this.str;
   }
-  
+  public void print(){
+    System.out.print(str +" ");
+  }
 }
