@@ -15,5 +15,15 @@ public class Node{
     this.left = l;
     this.right = r;
   }
+  // The Get methods
+  public Node getLeft(){
+    return this.left;
+  }
+  public Node getRight(){
+    return this.right;
+  }
+  public String getValue(){
+    return this.str;
+  }
   
 }
