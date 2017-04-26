@@ -15,6 +15,16 @@ public class Node{
     this.left = l;
     this.right = r;
   }
+  //The set methods
+  public void setLeft(Node l){
+    this.left = l;
+  }
+  public void setRight(Node r){
+    this.right = r;
+  }
+  public void setValue(String s){
+    this.str = s;
+  }
   // The Get methods
   public Node getLeft(){
     return this.left;
