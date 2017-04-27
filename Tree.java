@@ -61,4 +61,15 @@ public class Tree{
   public boolean isEmpty(){
     return root == null;
   }
+  /*
+   * The inorder traversal to print the tree
+   */
+  public void inorderPrint(Node r){
+     if(r != null){
+         inorderPrint(r.getLeft());
+         System.out.print(r.getValue()+" ");
+         inorderPrint(r.getRight());
+       }
+  }
+  
 }
