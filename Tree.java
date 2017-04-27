@@ -71,5 +71,25 @@ public class Tree{
          inorderPrint(r.getRight());
        }
   }
-  
+  /*
+   * The delete method that deletes a node from the tree
+   */
+  public void delete(String s){
+    if(search(s)!=null){
+      Node temp = search(s);
+      if(temp.getRight()!= null){
+        temp.getRight().setLeft(temp.getLeft());
+        temp = temp.getRight();
+      }
+      else if(temp.getLeft()!=null){
+        temp = temp.getLeft();
+      }
+      else
+        temp = null;
+    }
+    else
+    {
+      System.out.println(s + " doesn't exist on the tree");
+    }
+  }
 }
