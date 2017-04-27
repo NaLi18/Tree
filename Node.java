@@ -1,21 +1,28 @@
 public class Node{
   
-  Node left;
-  Node right;
-  String str;
+  private Node left;
+  private Node right;
+  private Node parent;
+  private String str;
   //default constructor
   public Node(){
     this.left = null;
     this.right = null;
-    str = null;
+    this.parent = null;
+    this.str = null;
   }
   //overloading Constructor
-  public Node(String s, Node l, Node r){
+  public Node(String s, Node l, Node r, Node p){
     this.str = null;
     this.left = l;
     this.right = r;
+    this.parent = p;
   }
   //The set methods
+  public void setParent(Node p){
+    this.parent = p;
+  }
+  
   public void setLeft(Node l){
     this.left = l;
   }
@@ -35,6 +42,10 @@ public class Node{
   public String getValue(){
     return this.str;
   }
+  public Node getParent(){
+    return this.parent;
+  }
+  //The print method
   public void print(){
     System.out.print(str +" ");
   }
