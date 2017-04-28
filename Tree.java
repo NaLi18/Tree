@@ -1,7 +1,7 @@
 public class Tree{
   
-  Node root;
-  int size;
+  private Node root;
+  private int size;
   //default constructor 
   public Tree(){
     root = null;
@@ -64,6 +64,10 @@ public class Tree{
   /*
    * The inorder traversal to print the tree
    */
+  public void print1(){
+    inorderPrint(root);
+  }
+  
   public void inorderPrint(Node r){
      if(r != null){
          inorderPrint(r.getLeft());
