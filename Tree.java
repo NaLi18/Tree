@@ -96,4 +96,12 @@ public class Tree{
       System.out.println(s + " doesn't exist on the tree");
     }
   }
-}
+  //The counter method 
+  public int counter(String str){
+    int wordsCounter = 0;
+    if(search(str)!=null){
+      wordsCounter++;
+    }
+    return wordsCounter;
+    }
+ }
