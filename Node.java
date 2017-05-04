@@ -4,6 +4,7 @@ public class Node{
   private Node right;
   private Node parent;
   private String str;
+  private int counter = 0;
   //default constructor
   public Node(String s){
     this.left = null;
@@ -22,7 +23,9 @@ public class Node{
   public void setParent(Node p){
     this.parent = p;
   }
-  
+  public void setCounter(){
+    counter++;
+  }
   public void setLeft(Node l){
     this.left = l;
   }
@@ -35,6 +38,9 @@ public class Node{
   // The Get methods
   public Node getLeft(){
     return this.left;
+  }
+  public int getCounter(){
+    return counter;
   }
   public Node getRight(){
     return this.right;
