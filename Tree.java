@@ -46,7 +46,7 @@ public class Tree{
     else{
       if(temp!=null){
         if(str.compareTo(temp.getValue())<0){
-          System.out.println("the " + str +" is less than "+ temp.getValue());
+         // System.out.println("the " + str +" is less than "+ temp.getValue());
           if(temp.getLeft()!=null){
             insert(temp.getLeft(),str);
           }
@@ -57,7 +57,7 @@ public class Tree{
           }
         }
         else if(str.compareTo(temp.getValue())>0){
-           System.out.println("the " + str +" is greater than "+ temp.getValue());
+           //System.out.println("the " + str +" is greater than "+ temp.getValue());
            if(temp.getRight()!=null){
             insert(temp.getRight(),str);
            }
@@ -68,7 +68,7 @@ public class Tree{
            }
         }
         else{
-          System.out.println("add " + str +"more than one "+ " times");
+          System.out.println("add " + str +" more than one "+ " times");
         }
       }
  }
