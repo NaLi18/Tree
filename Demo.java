@@ -36,7 +36,7 @@ public class Demo{
     while(inputFile.hasNext()){
     String line = inputFile.nextLine();
     trees.insert(line);
-    trees.print1();
+    trees.printInorder();
     }
     // System.out.println("The first line of the file is: " + line);
     inputFile.close();

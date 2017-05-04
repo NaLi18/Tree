@@ -35,29 +35,39 @@ public class Tree{
    * @param n the node will be add to the tree
    */
   public void insert(String str){
-    
+    insert(root,str);
+  }
+ public void insert(Node temp, String str){
+    Node n = new Node(str);
     if(this.isEmpty()){
       root = new Node(str);
     }
     else{
-      Node temp = root;
+      Node temp1 =null;
       while(temp!=null)
       {
-        if(temp.getValue().compareTo(str)>0){
-          temp = temp.getRight();
+        if(str.compareTo(temp.getValue())>=0){
+          if(temp.getRight()!=null){
+            insert(temp.getRight(),str);
+          }
+          else{
+            temp.setRight(n);
+            n.setParent(temp);
+          }
         }
-        else if(temp.getValue().compareTo(str)<0){
-          temp = temp.getLeft();
-        }
-        else{
-          if(temp.getValue().compareTo(str)<0)
-          temp.setLeft(new Node(str));
-          else
-          temp.setRight(new Node(str));
+        else if(str.compareTo(temp.getValue())<0){
+          if(temp.getLeft()!=null){
+            insert(temp.getRight(),str);
+          }
+          else{
+            temp.setLeft(n);
+            n.setParent(temp);
+          }
         }
       }
     }
-  }
+ }
+
   //Empty method
   public boolean isEmpty(){
     return root == null;
@@ -65,7 +75,7 @@ public class Tree{
   /*
    * The inorder traversal to print the tree
    */
-  public void print1(){
+  public void printInorder(){
     inorderPrint(root);
   }
   
