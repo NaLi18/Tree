@@ -42,11 +42,12 @@ public class Demo{
     //trees.printInorder();
     // System.out.println("The first line of the file is: " + line);
     inputFile.close();
-    /*System.out.println(trees.search("a"));
+    System.out.println(trees.search("a"));
     System.out.println(trees.search("this"));
-    System.out.println(trees.search("repeat"));
+    System.out.println(trees.search("repeats"));
     System.out.println(trees.search("words"));
     System.out.println(trees.search("good"));
-    */
+    System.out.println(trees.search("out"));
+    
   }
 }

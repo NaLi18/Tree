@@ -13,22 +13,24 @@ public class Tree{
    * @return the found node which has the value of the paramter
    */
   public Node search(String str){
-    Node temp = root;
-    boolean found = false;
-    while(!found){
-      if(temp.getValue() == str){
-        found = true;
+    return search(root,str);
+  }
+  
+  public Node search(Node temp, String str){
+    if(temp!= null){
+      if(temp.getValue().equals(str)){
+        return temp;
       }
-      else {
-        if(temp.getLeft() != null){
-          temp = temp.getLeft();
+      else if(temp.getValue().compareTo(str)>0){
+          return this.search(temp.getLeft(),str);
         }
-        else{
-          temp = temp.getRight();
+      else{
+          return this.search(temp.getRight(), str);
         }
-      }
     }
-    return temp;
+    else{
+      return temp;
+    }
   }
   /*
    * the insert method which inserts a node to a tree
