@@ -41,26 +41,34 @@ public class Tree{
     Node n = new Node(str);
     if(this.isEmpty()){
       root = new Node(str);
+       System.out.println("add " + str +" as root");
     }
     else{
       if(temp!=null){
-        if(str.compareTo(temp.getValue())>=0){
-          if(temp.getRight()!=null){
-            insert(temp.getRight(),str);
-          }
-          else{
-            temp.setRight(n);
-            n.setParent(temp);
-          }
-        }
-        else if(str.compareTo(temp.getValue())<0){
+        if(str.compareTo(temp.getValue())<0){
+          System.out.println("the " + str +" is less than "+ temp.getValue());
           if(temp.getLeft()!=null){
-            insert(temp.getRight(),str);
+            insert(temp.getLeft(),str);
           }
           else{
+            System.out.println("add " + str +" to the left of the " + temp.getValue());
             temp.setLeft(n);
             n.setParent(temp);
           }
+        }
+        else if(str.compareTo(temp.getValue())>0){
+           System.out.println("the " + str +" is greater than "+ temp.getValue());
+           if(temp.getRight()!=null){
+            insert(temp.getRight(),str);
+           }
+           else{
+            System.out.println("add " + str +" to the right of the " + temp.getValue());
+            temp.setRight(n);
+            n.setParent(temp);
+           }
+        }
+        else{
+          System.out.println("add " + str +"more than one "+ " times");
         }
       }
  }
