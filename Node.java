@@ -5,11 +5,11 @@ public class Node{
   private Node parent;
   private String str;
   //default constructor
-  public Node(){
+  public Node(String s){
     this.left = null;
     this.right = null;
     this.parent = null;
-    this.str = null;
+    this.str = s;
   }
   //overloading Constructor
   public Node(String s, Node l, Node r, Node p){

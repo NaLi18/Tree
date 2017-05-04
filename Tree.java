@@ -34,25 +34,26 @@ public class Tree{
    * the insert method which inserts a node to a tree
    * @param n the node will be add to the tree
    */
-  public void insert(Node n){
+  public void insert(String str){
+    
     if(this.isEmpty()){
-      root = n;
+      root = new Node(str);
     }
     else{
       Node temp = root;
       while(temp!=null)
       {
-        if(temp.getValue().compareTo(n.getValue())>0){
+        if(temp.getValue().compareTo(str)>0){
           temp = temp.getRight();
         }
-        else if(temp.getValue().compareTo(n.getValue())<0){
+        else if(temp.getValue().compareTo(str)<0){
           temp = temp.getLeft();
         }
         else{
-          if(temp.getValue().compareTo(n.getValue())<0)
-          temp.setLeft(n);
+          if(temp.getValue().compareTo(str)<0)
+          temp.setLeft(new Node(str));
           else
-          temp.setRight(n);
+          temp.setRight(new Node(str));
         }
       }
     }
