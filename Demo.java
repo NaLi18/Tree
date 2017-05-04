@@ -7,6 +7,7 @@ public class Demo{
     String filename;
     Tree trees = new Tree();
     Scanner keyboard = new Scanner(System.in);
+   /*
     System.out.print("Enter the filename");
     filename = keyboard.nextLine();
     PrintWriter outputFile = new PrintWriter(filename);
@@ -29,15 +30,15 @@ public class Demo{
     outputFile.println("example");
     outputFile.println("sentence");
     outputFile.close();
- 
+ */
     // Reading  the data from the file
     File myFile = new File("StudentData");
     Scanner inputFile = new Scanner(myFile);
     while(inputFile.hasNext()){
     String line = inputFile.nextLine();
     trees.insert(line);
-    trees.printInorder();
     }
+    trees.printInorder();
     // System.out.println("The first line of the file is: " + line);
     inputFile.close();
   }

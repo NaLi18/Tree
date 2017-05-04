@@ -43,9 +43,7 @@ public class Tree{
       root = new Node(str);
     }
     else{
-      Node temp1 =null;
-      while(temp!=null)
-      {
+      if(temp!=null){
         if(str.compareTo(temp.getValue())>=0){
           if(temp.getRight()!=null){
             insert(temp.getRight(),str);
@@ -65,9 +63,8 @@ public class Tree{
           }
         }
       }
-    }
  }
-
+ }
   //Empty method
   public boolean isEmpty(){
     return root == null;
@@ -80,11 +77,11 @@ public class Tree{
   }
   
   public void inorderPrint(Node r){
-     if(r != null){
-         inorderPrint(r.getLeft());
-         System.out.print(r.getValue()+" ");
-         inorderPrint(r.getRight());
-       }
+    if(r!=null){
+      inorderPrint(r.getLeft());
+      System.out.print(r.getValue()+" ");
+      inorderPrint(r.getRight());
+    }
   }
   /*
    * The delete method that deletes a node from the tree
