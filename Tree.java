@@ -100,7 +100,18 @@ public class Tree{
     if(search(s)!=null){
       Node temp = search(s);
       Node move = null;
-      if(temp.getParent().getValue().compareTo(temp.getValue())>0){
+      if(temp.getParent()== null){
+        move = temp.getRight();
+        temp = temp.getLeft();
+        while(temp.getRight()!= null || temp.getRight().getValue().compareTo(move.getValue())<0){
+          temp = temp.getRight();
+        }
+        temp.getRight().setParent(move);
+        move.setRight(temp.getRight());
+        temp.setRight(move);
+      }
+        else{
+        if(temp.getParent().getValue().compareTo(temp.getValue())>0){
          if(temp.getLeft()!=null){
            temp.getParent().setLeft(temp.getLeft());
            temp.getLeft().setParent(temp.getParent());
@@ -108,11 +119,13 @@ public class Tree{
              move = temp.getLeft().getRight();
              temp.getLeft().setRight(temp.getRight());
              temp.getRight().setParent(temp.getLeft());
+             temp = temp.getLeft();
              insert(move.getValue());
            }
            else{
              temp.getLeft().setRight(temp.getRight());
              temp.getRight().setParent(temp.getLeft());
+             temp = temp.getLeft();
            }
          }
       }
@@ -125,15 +138,17 @@ public class Tree{
              temp.getRight().setLeft(temp.getLeft());
              temp.getLeft().setParent(temp.getRight());
              insert(move.getValue());
+             temp = temp.getRight();
            }
            else{
              temp.getRight().setLeft(temp.getLeft());
              temp.getLeft().setParent(temp.getRight());
+             temp = temp.getRight();
            }
          }
       }
     }
-          
+    }
       /*if(temp.getRight()!= null){
         if(temp.getRight().getLeft()==null){
         temp.getRight().setLeft(temp.getLeft());
