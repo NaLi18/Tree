@@ -98,43 +98,7 @@ public class Tree{
    * The delete method that deletes a node from the tree
    */
   public void delete(String s){
-    if(search(s)!=null){
-      Node temp = search(s);
-      if(temp.getParent()== null){
-        temp.getLeft().move(temp.getRight());
-      }
-      else{
-        if(temp.getParent().getValue().compareTo(s)>0){
-          if(temp.getLeft()!=null){
-            temp.getParent().setLeft(temp.getLeft());
-            temp.getLeft().setParent(temp.getParent());
-            if(temp.getRight()!=null){
-              temp.getLeft().move(temp.getRight());
-            }
-          }
-          else{
-            temp.getParent().setLeft(null);
-            temp = null;
-          }
-        }
-        else{
-          if(temp.getRight()!=null){
-            temp.getParent().setRight(temp.getRight());
-            temp.getRight().setParent(temp.getParent());
-            if(temp.getLeft()!=null){
-              temp.getRight().move(temp.getLeft());
-            }
-          }
-          else{
-            temp.getParent().setRight(null);
-            temp = null;
-          }
-        }
-      }
-    }
-    else{
-      System.out.println(s + "Doesn't exist on the tree.");
-    }
+    
   }
   //The counter method 
   public int counter(String str){
