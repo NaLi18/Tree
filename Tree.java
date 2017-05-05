@@ -97,76 +97,7 @@ public class Tree{
    * The delete method that deletes a node from the tree
    */
   public void delete(String s){
-    if(search(s)!=null){
-      Node temp = search(s);
-      Node move = null;
-      if(temp.getParent()== null){
-        move = temp.getRight();
-        temp = temp.getLeft();
-        while(temp.getRight()!= null || temp.getRight().getValue().compareTo(move.getValue())<0){
-          temp = temp.getRight();
-        }
-        temp.getRight().setParent(move);
-        move.setRight(temp.getRight());
-        temp.setRight(move);
-      }
-        else{
-        if(temp.getParent().getValue().compareTo(temp.getValue())>0){
-         if(temp.getLeft()!=null){
-           temp.getParent().setLeft(temp.getLeft());
-           temp.getLeft().setParent(temp.getParent());
-           if(temp.getLeft().getRight()!=null){
-             move = temp.getLeft().getRight();
-             temp.getLeft().setRight(temp.getRight());
-             temp.getRight().setParent(temp.getLeft());
-             temp = temp.getLeft();
-             insert(move.getValue());
-           }
-           else{
-             temp.getLeft().setRight(temp.getRight());
-             temp.getRight().setParent(temp.getLeft());
-             temp = temp.getLeft();
-           }
-         }
-      }
-      else{
-        if(temp.getRight()!=null){
-           temp.getParent().setRight(temp.getRight());
-           temp.getRight().setParent(temp.getParent());
-           if(temp.getRight().getLeft()!=null){
-             move = temp.getRight().getLeft();
-             temp.getRight().setLeft(temp.getLeft());
-             temp.getLeft().setParent(temp.getRight());
-             insert(move.getValue());
-             temp = temp.getRight();
-           }
-           else{
-             temp.getRight().setLeft(temp.getLeft());
-             temp.getLeft().setParent(temp.getRight());
-             temp = temp.getRight();
-           }
-         }
-      }
-    }
-    }
-      /*if(temp.getRight()!= null){
-        if(temp.getRight().getLeft()==null){
-        temp.getRight().setLeft(temp.getLeft());
-        temp.getParent().
-        }
-        temp = temp.getRight();
-      }
-      else if(temp.getLeft()!=null){
-        temp = temp.getLeft();
-      }
-      else
-        temp = null;
-    }
-    else
-    {
-      System.out.println(s + " doesn't exist on the tree");
-    }
-    */
+    
   }
   //The counter method 
   public int counter(String str){

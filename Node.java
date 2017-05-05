@@ -55,4 +55,19 @@ public class Node{
   public void print(){
     System.out.print(str +" ");
   }
+  
+  public void move(Node n){
+      if(str.compareTo(n.getValue())<0){
+        if(this != null){
+        this.left.move(n);
+        }
+        left.setLeft(n);
+      }
+      else{
+        if(this != null){
+        this.right.move(n);
+        }
+        this.right.setRight(n);
+      }
+  }
 }
