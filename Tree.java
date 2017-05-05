@@ -89,7 +89,7 @@ public class Tree{
   public void inorderPrint(Node r){
     if(r!=null){
       inorderPrint(r.getLeft());
-      System.out.print(r.getValue()+" ");
+      System.out.println(r.getValue()+" ");
       inorderPrint(r.getRight());
     }
   }
@@ -99,8 +99,46 @@ public class Tree{
   public void delete(String s){
     if(search(s)!=null){
       Node temp = search(s);
-      if(temp.getRight()!= null){
+      Node move = null;
+      if(temp.getParent().getValue().compareTo(temp.getValue())>0){
+         if(temp.getLeft()!=null){
+           temp.getParent().setLeft(temp.getLeft());
+           temp.getLeft().setParent(temp.getParent());
+           if(temp.getLeft().getRight()!=null){
+             move = temp.getLeft().getRight();
+             temp.getLeft().setRight(temp.getRight());
+             temp.getRight().setParent(temp.getLeft());
+             insert(move.getValue());
+           }
+           else{
+             temp.getLeft().setRight(temp.getRight());
+             temp.getRight().setParent(temp.getLeft());
+           }
+         }
+      }
+      else{
+        if(temp.getRight()!=null){
+           temp.getParent().setRight(temp.getRight());
+           temp.getRight().setParent(temp.getParent());
+           if(temp.getRight().getLeft()!=null){
+             move = temp.getRight().getLeft();
+             temp.getRight().setLeft(temp.getLeft());
+             temp.getLeft().setParent(temp.getRight());
+             insert(move.getValue());
+           }
+           else{
+             temp.getRight().setLeft(temp.getLeft());
+             temp.getLeft().setParent(temp.getRight());
+           }
+         }
+      }
+    }
+          
+      /*if(temp.getRight()!= null){
+        if(temp.getRight().getLeft()==null){
         temp.getRight().setLeft(temp.getLeft());
+        temp.getParent().
+        }
         temp = temp.getRight();
       }
       else if(temp.getLeft()!=null){
@@ -113,6 +151,7 @@ public class Tree{
     {
       System.out.println(s + " doesn't exist on the tree");
     }
+    */
   }
   //The counter method 
   public int counter(String str){

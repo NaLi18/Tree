@@ -39,15 +39,21 @@ public class Demo{
     trees.insert(line);
     }
     
-    //trees.printInorder();
+    trees.printInorder();
     // System.out.println("The first line of the file is: " + line);
     inputFile.close();
+    /*
+    //Debugger and Testing the search method
     System.out.println(trees.search("a"));
     System.out.println(trees.search("this"));
     System.out.println(trees.search("repeats"));
     System.out.println(trees.search("words"));
     System.out.println(trees.search("good"));
     System.out.println(trees.search("out"));
-    
+    */
+    //Debugger and Testing the delete method
+    trees.delete("a");
+    System.out.println("delete a from tree ");
+    trees.printInorder();
   }
 }
