@@ -159,12 +159,27 @@ public class Tree{
       System.out.println(s+" doesn't exsit on the tree");
     }
   }
-  //The counter method 
-  public int counter(String str){
-    int wordsCounter = 0;
-    if(search(str)!=null){
-      wordsCounter++;
-    }
-    return wordsCounter;
-    }
+   /*
+   * The Postorder traversal to print the tree
+   */
+  public void printPostorder(){
+    
+  }
+   /*
+   * The Preorder traversal to print the tree
+   */
+  public void printPreorder(){
+  }
+  /*
+   * The is isBalance method(need complete)
+   */
+  public boolean isBalance(){
+    return false;
+  }
+   /*
+   * Balance the tree
+   */
+  public void balance(){
+    
+  }
  }

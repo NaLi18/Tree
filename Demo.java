@@ -51,6 +51,7 @@ public class Demo{
     System.out.println(trees.search("good"));
     System.out.println(trees.search("out"));
     */
+    /*
     //Debugger and Testing the delete method
     trees.delete("a");
     trees.delete("repeats");
@@ -60,5 +61,7 @@ public class Demo{
     trees.delete("words");
     System.out.println("delete some node from the tree");
     trees.printInorder();
+    */
+    //Debugger and Testing the postorderPrint and preorderPrint
   }
 }
