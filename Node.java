@@ -58,16 +58,16 @@ public class Node{
   
   public void move(Node n){
       if(str.compareTo(n.getValue())<0){
-        if(this != null){
+        if(this.left!= null){
         this.left.move(n);
         }
-        left.setLeft(n);
+        left = n;
       }
       else{
-        if(this != null){
+        if(this.right!= null){
         this.right.move(n);
         }
-        this.right.setRight(n);
+        this.right = n;
       }
   }
 }
