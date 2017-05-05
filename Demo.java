@@ -54,6 +54,7 @@ public class Demo{
     //Debugger and Testing the delete method
     //trees.delete("a");
     //trees.delete("repeats");
+    //trees.delete("because");
     trees.delete("this");
     System.out.println("delete this from the tree");
     trees.printInorder();

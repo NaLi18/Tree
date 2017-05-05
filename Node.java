@@ -60,13 +60,13 @@ public class Node{
   
   public void move(Node n){
       if(str.compareTo(n.getValue())<0){
-        if(this.left!= null){
+        while(this.left!= null){
         this.left.move(n);
         }
-        left = n;
+        this.left = n;
       }
       else{
-        if(this.right!= null){
+        while(this.right!= null){
         this.right.move(n);
         }
         this.right = n;

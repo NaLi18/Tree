@@ -53,7 +53,7 @@ public class Tree{
             insert(temp.getLeft(),str);
           }
           else{
-            System.out.println("add " + str +" to the left of the " + temp.getValue());
+            //System.out.println("add " + str +" to the left of the " + temp.getValue());
             temp.setLeft(n);
             n.setParent(temp);
           }
@@ -64,14 +64,14 @@ public class Tree{
             insert(temp.getRight(),str);
            }
            else{
-            System.out.println("add " + str +" to the right of the " + temp.getValue());
+           // System.out.println("add " + str +" to the right of the " + temp.getValue());
             temp.setRight(n);
             n.setParent(temp);
            }
         }
         else{
           temp.setCounter();
-          System.out.println(temp.getValue()+" add " + temp.getCounter()+" times.");
+          //System.out.println(temp.getValue()+" add " + temp.getCounter()+" times.");
         }
       }
  }
@@ -101,7 +101,18 @@ public class Tree{
     if(search(s)!=null){
       Node temp = search(s);
       if(temp.getParent()==null){
-        temp.getLeft().move(temp.getRight());
+        Node temp1;
+        if(temp.getLeft()!=null){
+          if(temp.getRight()!=null){
+          root = temp.getLeft();
+          root.setParent(null);
+          root.getRight().move(temp.getRight());
+          }
+          else{
+            root = temp.getLeft();
+            root.setParent(null);
+          }
+        }
       }
       else{
         if(temp.getParent().getValue().compareTo(s)>0){
