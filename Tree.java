@@ -70,7 +70,8 @@ public class Tree{
            }
         }
         else{
-          System.out.println("add " + str +" more than one "+ " times");
+          temp.setCounter();
+          System.out.println(temp.getValue()+" add " + temp.getCounter()+" times.");
         }
       }
  }
@@ -89,7 +90,7 @@ public class Tree{
   public void inorderPrint(Node r){
     if(r!=null){
       inorderPrint(r.getLeft());
-      System.out.println(r.getValue()+" ");
+      System.out.println(r.getValue()+" "+r.getCounter());
       inorderPrint(r.getRight());
     }
   }

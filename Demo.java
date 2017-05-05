@@ -51,9 +51,11 @@ public class Demo{
     System.out.println(trees.search("good"));
     System.out.println(trees.search("out"));
     */
+    /*
     //Debugger and Testing the delete method
     trees.delete("a");
     System.out.println("delete a from tree ");
     trees.printInorder();
+    */
   }
 }

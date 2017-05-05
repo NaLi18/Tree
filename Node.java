@@ -4,13 +4,14 @@ public class Node{
   private Node right;
   private Node parent;
   private String str;
-  private int counter = 0;
+  private int counter;
   //default constructor
   public Node(String s){
     this.left = null;
     this.right = null;
     this.parent = null;
     this.str = s;
+    this.counter = 1;
   }
   //overloading Constructor
   public Node(String s, Node l, Node r, Node p){
@@ -18,13 +19,14 @@ public class Node{
     this.left = l;
     this.right = r;
     this.parent = p;
+    this.counter = 1;
   }
   //The set methods
   public void setParent(Node p){
     this.parent = p;
   }
   public void setCounter(){
-    counter++;
+    counter = counter+1;
   }
   public void setLeft(Node l){
     this.left = l;
