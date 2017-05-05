@@ -52,11 +52,13 @@ public class Demo{
     System.out.println(trees.search("out"));
     */
     //Debugger and Testing the delete method
-    //trees.delete("a");
-    //trees.delete("repeats");
-    //trees.delete("because");
+    trees.delete("a");
+    trees.delete("repeats");
+    trees.delete("because");
     trees.delete("this");
-    System.out.println("delete this from the tree");
+    trees.delete("that");
+    trees.delete("words");
+    System.out.println("delete some node from the tree");
     trees.printInorder();
   }
 }

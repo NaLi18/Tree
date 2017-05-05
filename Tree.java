@@ -124,8 +124,14 @@ public class Tree{
             }
           }
           else{
+            if(temp.getRight()!=null){
+              temp.getParent().setLeft(temp.getRight());
+              temp.getRight().setParent(temp.getParent());
+            }
+            else{
             temp.getParent().setLeft(null);
             temp = null;
+            }
           }
         }
         else{
@@ -137,14 +143,20 @@ public class Tree{
             }
           }
           else{
+            if(temp.getLeft()!=null){
+              temp.getParent().setRight(temp.getLeft());
+              temp.getLeft().setParent(temp.getParent());
+            }
+            else{
             temp.getParent().setRight(null);
             temp = null;
+            }
           }
         }
       }
     }
     else{
-      System.out.println(s+"doesn't exsit on the tree");
+      System.out.println(s+" doesn't exsit on the tree");
     }
   }
   //The counter method 

@@ -59,17 +59,17 @@ public class Node{
   }
   
   public void move(Node n){
-      if(str.compareTo(n.getValue())<0){
-        while(this.left!= null){
+      if(str.compareTo(n.getValue())>0){
+        if(this.left!= null){
         this.left.move(n);
         }
-        this.left = n;
+          this.left = n;
       }
       else{
-        while(this.right!= null){
-        this.right.move(n);
+        if(this.right!= null){
+          this.right.move(n);
         }
-        this.right = n;
+          this.right = n;
       }
   }
 }
