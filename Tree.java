@@ -163,12 +163,20 @@ public class Tree{
    * The Postorder traversal to print the tree
    */
   public void printPostorder(){
-    
+    this.printPostorder(root);
+  }
+  public void printPostorder(Node r){
+    if(r!=null){
+      inorderPrint(r.getLeft());
+      inorderPrint(r.getRight());
+      System.out.println(r.getValue()+" "+r.getCounter());
+    }
   }
    /*
    * The Preorder traversal to print the tree
    */
   public void printPreorder(){
+    
   }
   /*
    * The is isBalance method(need complete)
