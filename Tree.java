@@ -195,4 +195,7 @@ public class Tree{
   public void balance(){
     
   }
+  public int deepth(){
+    return 1;
+  }
  }
