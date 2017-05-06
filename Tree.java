@@ -176,7 +176,12 @@ public class Tree{
    * The Preorder traversal to print the tree
    */
   public void printPreorder(){
-    
+    this.printPreorder(root);
+  }
+  public void printPreorder(Node r){
+    System.out.println(r.getValue()+" "+r.getCounter());
+    inorderPrint(r.getLeft());
+    inorderPrint(r.getRight());
   }
   /*
    * The is isBalance method(need complete)
