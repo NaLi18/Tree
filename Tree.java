@@ -187,13 +187,29 @@ public class Tree{
    * The is isBalance method(need complete)
    */
   private boolean isBalance(){
-    return false;
+    boolean status = false;
+    int m;
+    if(this.leftDeepth()>=this.rightDeepth()){
+     m = this.leftDeepth()- this.rightDeepth();
+    if(m==1 || m==0){
+      status = true;
+    }
+    }
+    else{
+      m = this.rightDeepth() - leftDeepth();
+      if(m==1){
+        status = true;
+      }
+    }
+    return status;
   }
    /*
    * Balance the tree
    */
   public void balance(){
-    
+    if(isBalance()){
+      System.out.println("The tree are balance now");
+    }
   }
   private int leftDeepth(){
     int depth = 0;
