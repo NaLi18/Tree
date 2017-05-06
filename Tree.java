@@ -197,10 +197,20 @@ public class Tree{
   }
   private int leftDeepth(){
     int depth = 0;
+    Node temp = root;
+    while(temp!=null){
+      temp = temp.getLeft();
+      depth++;
+    }
     return depth;
   }
   private int rightDeepth(){
     int depth = 0;
+    Node temp = root;
+    while(temp!=null){
+      temp = temp.getRight();
+      depth++;
+    }
     return depth;
   }
  }
