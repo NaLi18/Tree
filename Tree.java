@@ -77,7 +77,7 @@ public class Tree{
  }
  }
   //Empty method
-  public boolean isEmpty(){
+  private boolean isEmpty(){
     return root == null;
   }
   /*
@@ -87,7 +87,7 @@ public class Tree{
     inorderPrint(root);
   }
   
-  public void inorderPrint(Node r){
+  private void inorderPrint(Node r){
     if(r!=null){
       inorderPrint(r.getLeft());
       System.out.println(r.getValue()+" "+r.getCounter());
@@ -165,7 +165,7 @@ public class Tree{
   public void printPostorder(){
     this.printPostorder(root);
   }
-  public void printPostorder(Node r){
+  private void printPostorder(Node r){
     if(r!=null){
       inorderPrint(r.getLeft());
       inorderPrint(r.getRight());
@@ -178,7 +178,7 @@ public class Tree{
   public void printPreorder(){
     this.printPreorder(root);
   }
-  public void printPreorder(Node r){
+  private void printPreorder(Node r){
     System.out.println(r.getValue()+" "+r.getCounter());
     inorderPrint(r.getLeft());
     inorderPrint(r.getRight());
@@ -186,7 +186,7 @@ public class Tree{
   /*
    * The is isBalance method(need complete)
    */
-  public boolean isBalance(){
+  private boolean isBalance(){
     return false;
   }
    /*
@@ -195,7 +195,12 @@ public class Tree{
   public void balance(){
     
   }
-  public int deepth(){
-    return 1;
+  private int leftDeepth(){
+    int depth = 0;
+    return depth;
+  }
+  private int rightDeepth(){
+    int depth = 0;
+    return depth;
   }
  }
