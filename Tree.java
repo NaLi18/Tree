@@ -43,7 +43,7 @@ public class Tree{
     Node n = new Node(str);
     if(this.isEmpty()){
       root = new Node(str);
-       System.out.println("add " + str +" as root");
+       //System.out.println("add " + str +" as root");
     }
     else{
       if(temp!=null){
@@ -165,10 +165,10 @@ public class Tree{
   public void printPostorder(){
     this.printPostorder(root);
   }
-  private void printPostorder(Node r){
+  public void printPostorder(Node r){
     if(r!=null){
-      inorderPrint(r.getLeft());
-      inorderPrint(r.getRight());
+      printPostorder(r.getLeft());
+      printPostorder(r.getRight());
       System.out.println(r.getValue()+" "+r.getCounter());
     }
   }
@@ -178,10 +178,12 @@ public class Tree{
   public void printPreorder(){
     this.printPreorder(root);
   }
-  private void printPreorder(Node r){
-    System.out.println(r.getValue()+" "+r.getCounter());
-    inorderPrint(r.getLeft());
-    inorderPrint(r.getRight());
+  public void printPreorder(Node r){
+    if(r!=null){
+      System.out.println(r.getValue()+" "+r.getCounter());
+      printPreorder(r.getLeft());
+      printPreorder(r.getRight());
+    }
   }
   /*
    * The is isBalance method(need complete)

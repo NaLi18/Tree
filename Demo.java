@@ -38,10 +38,14 @@ public class Demo{
     String line = inputFile.nextLine();
     trees.insert(line);
     }
-    
-    trees.printInorder();
     // System.out.println("The first line of the file is: " + line);
     inputFile.close();
+    System.out.println("Traversal in inorder " );
+    trees.printInorder();
+    System.out.println("Traversal in preorder " );
+    trees.printPreorder();
+    System.out.println("Traversal in postorder " );
+    trees.printPostorder();
     /*
     //Debugger and Testing the search method
     System.out.println(trees.search("a"));
@@ -63,5 +67,6 @@ public class Demo{
     trees.printInorder();
     */
     //Debugger and Testing the postorderPrint and preorderPrint
+    
   }
 }
