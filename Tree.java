@@ -209,11 +209,40 @@ public class Tree{
   public void balance(){
     Node temp = root;
     int m;
-    if(isBalance()){
+    if(this.isBalance()){
       System.out.println("The tree are balance now");
     }
     else {
-      
+      if(this.leftDeepth() > this.rightDeepth()){
+        m = (leftDeepth()-rightDeepth())/2;
+        for(int i=0; i<m; i++){
+          temp = temp.getLeft();
+        }
+        temp.getParent().switchNode();
+        root = temp;
+        temp = temp.getRight();
+        if(temp != null){
+          root.getLeft().move(temp);
+        }
+        root.setRight(root.getParent());
+        root.getParent().setParent(root);
+        root.setParent(null);
+      }
+      else{
+        m = (rightDeepth()-leftDeepth())/2;
+        for(int i=0; i<m; i++){
+          temp = temp.getRight();
+        }
+        temp.getParent().switchNode();
+        root = temp;
+        temp = temp.getLeft();
+        if(temp != null){
+          root.getRight().move(temp);
+        }
+        root.setLeft(root.getParent());
+        root.getParent().setParent(root);
+        root.setParent(null);
+      }
     }
     }
   private int leftDeepth(){
