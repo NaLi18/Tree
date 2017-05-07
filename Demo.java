@@ -42,10 +42,13 @@ public class Demo{
     inputFile.close();
     System.out.println("Traversal in inorder " );
     trees.printInorder();
+    /*
+    //Debugger and Testing the postorderPrint and preorderPrint
     System.out.println("Traversal in preorder " );
     trees.printPreorder();
     System.out.println("Traversal in postorder " );
     trees.printPostorder();
+    */
     /*
     //Debugger and Testing the search method
     System.out.println(trees.search("a"));
@@ -66,7 +69,9 @@ public class Demo{
     System.out.println("delete some node from the tree");
     trees.printInorder();
     */
-    //Debugger and Testing the postorderPrint and preorderPrint
-    
+    //Debugger and Testing the balance method and deepth method and isBalance method
+    trees.balance();
+    System.out.println(trees.getRoot().getValue());
+    System.out.println(trees.getRoot().getRight().getValue());
   }
 }

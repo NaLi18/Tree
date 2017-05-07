@@ -8,6 +8,12 @@ public class Tree{
     size = 0;
   }
   /*
+   * return the root value of the tree
+   */
+  public Node getRoot(){
+    return this.root;
+  }
+  /*
    * The search method that finds and returns the node that matches a search key 
    * @param str the possible value of node
    * @return the found node which has the value of the paramter
@@ -186,7 +192,7 @@ public class Tree{
     }
   }
   /*
-   * The is isBalance method(need complete)
+   * The is isBalance method
    */
   private boolean isBalance(){
     boolean status = false;
@@ -215,6 +221,7 @@ public class Tree{
       System.out.println("The tree are balance now");
     }
     else {
+      System.out.println("The tree are unbalance, Now make it balance");
       if(this.leftDeepth() > this.rightDeepth()){
         m = (leftDeepth()-rightDeepth())/2;
         for(int i=0; i<m; i++){
@@ -247,6 +254,9 @@ public class Tree{
       }
     }
     }
+  /*
+   * return the deepth of the left subtree
+   */
   private int leftDeepth(){
     int depth = 0;
     Node temp = root;
@@ -256,6 +266,9 @@ public class Tree{
     }
     return depth;
   }
+  /*
+   * return the deepth of the right subtree
+   */
   private int rightDeepth(){
     int depth = 0;
     Node temp = root;
