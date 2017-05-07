@@ -90,7 +90,7 @@ public class Tree{
    * The inorder traversal to print the tree
    */
   public void printInorder(){
-    inorderPrint(root);
+    inorderPrint(this.root);
   }
   
   private void inorderPrint(Node r){
@@ -223,56 +223,55 @@ public class Tree{
     else {
       System.out.println("The tree are unbalance, Now make it balance");
       if(this.leftDeepth() > this.rightDeepth()){
-        m = (leftDeepth()-rightDeepth())/2;
+        m = (leftDeepth()+rightDeepth())/2;
         for(int i=0; i<m; i++){
           temp = temp.getLeft();
         }
-        temp.getParent().switchNode();
+        System.out.println("The root become "+temp.getValue());
         root = temp;
-        temp = temp.getRight();
-        if(temp != null){
-          root.getLeft().move(temp);
-        }
-        root.setRight(root.getParent());
-        root.getParent().setParent(root);
+        if(temp.getRight()!=null){
+          temp.getLeft().move(temp.getRight());}
+        root.setRight(temp.getParent());
+        temp = root.getRight();
+        temp.switchNode();
+        root.getRight().setParent(root);
         root.setParent(null);
       }
       else{
-        m = (rightDeepth()-leftDeepth())/2;
+        m = (leftDeepth()+rightDeepth())/2;
         for(int i=0; i<m; i++){
           temp = temp.getRight();
         }
-        temp.getParent().switchNode();
+        System.out.println("The root become "+temp.getValue());
         root = temp;
-        temp = temp.getLeft();
-        if(temp != null){
-          root.getRight().move(temp);
-        }
-        root.setLeft(root.getParent());
-        root.getParent().setParent(root);
+        temp.getRight().move(temp.getLeft());
+        temp.setLeft(temp.getParent());
         root.setParent(null);
+        temp = temp.getLeft();
+        temp.switchNode();
+        root.getLeft().setParent(root);
       }
-    }
+      }
     }
   /*
    * return the deepth of the left subtree
    */
-  private int leftDeepth(){
+  public int leftDeepth(){
     int depth = 0;
     Node temp = root;
-    while(temp!=null){
+    while(temp.getLeft()!=null){
       temp = temp.getLeft();
-      depth++;
+      depth ++;
     }
     return depth;
   }
   /*
    * return the deepth of the right subtree
    */
-  private int rightDeepth(){
+  public int rightDeepth(){
     int depth = 0;
     Node temp = root;
-    while(temp!=null){
+    while(temp.getRight()!=null){
       temp = temp.getRight();
       depth++;
     }

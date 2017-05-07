@@ -69,9 +69,17 @@ public class Demo{
     System.out.println("delete some node from the tree");
     trees.printInorder();
     */
+    
     //Debugger and Testing the balance method and deepth method and isBalance method
     trees.balance();
-    System.out.println(trees.getRoot().getValue());
-    System.out.println(trees.getRoot().getRight().getValue());
+    //System.out.println(trees.getRoot().getValue());
+    //System.out.println(trees.getRoot().getParent());
+    //System.out.println(trees.getRoot().getRight().getValue());
+    //System.out.println(trees.getRoot().getRight().getRight().getValue());
+    //System.out.println(trees.getRoot().getRight().getRight().getParent().getValue());
+    //System.out.println(trees.getRoot().getRight().getRight().getRight().getValue());
+    trees.balance();
+    System.out.println("The right deepth of the tree is "+trees.rightDeepth());
+    System.out.println("The left deepth of the tree is "+trees.leftDeepth());
   }
 }

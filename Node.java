@@ -59,42 +59,43 @@ public class Node{
   }
   
   public void move(Node n){
+    if(n != null){
       if(str.compareTo(n.getValue())>0){
         if(this.left!= null){
-        this.left.move(n);
+          this.left.move(n);
         }
+        else{
           this.left = n;
+          n.setParent(this);
+        }
       }
       else{
         if(this.right!= null){
           this.right.move(n);
         }
+        else{
           this.right = n;
+          n.setParent(this);
+        }
       }
+    }
   }
   public void switchNode(){
-    if(this.parent!=null){
-      if(this.parent.getValue().compareTo(str)>0){
-      this.parent.setParent(this);
-      if(this.right==null){
-        this.right =this.parent; 
+    if(parent!= null){
+      if(str.compareTo(parent.getValue())<0){
+        if(right!=null){
+          right.move(parent);
+        }
+          right = parent;
+          right.setParent(this);
       }
       else{
-        this.left.move(this.right);
-        this.right = this.parent;
-      }
-      this.right.switchNode();
-      }
-      else{
-        this.parent.setParent(this);
-        if(this.left==null){
-          this.left =this.parent; 
+        if(left!=null){
+          left.move(parent);
         }
-        else{
-          this.right.move(this.left);
-          this.left = this.parent;
-        }
-        this.left.switchNode();
+        
+          left = parent;
+          left.setParent(this);
       }
     }
   }
