@@ -1,10 +1,14 @@
+/*
+ * Name:Na Li
+ * Lab: 2:45pm - 3:40pm, Monday
+ */
 public class Node{
-  
   private Node left;
   private Node right;
   private Node parent;
   private String str;
   private int counter;
+  
   //default constructor
   public Node(String s){
     this.left = null;
@@ -57,7 +61,10 @@ public class Node{
   public void print(){
     System.out.print(str +" ");
   }
-  
+  /*
+   * The move method which move a subtree to another tree
+   * @param n the adding subtree
+   */
   public void move(Node n){
     if(n != null){
       if(str.compareTo(n.getValue())>0){
@@ -80,22 +87,25 @@ public class Node{
       }
     }
   }
+  /*
+   * The switchNode tree which switch the position of parent and children
+   */
   public void switchNode(){
     if(parent!= null){
       if(str.compareTo(parent.getValue())<0){
         if(right!=null){
           right.move(parent);
         }
-          right = parent;
-          right.setParent(this);
+        right = parent;
+        right.setParent(this);
       }
       else{
         if(left!=null){
           left.move(parent);
         }
         
-          left = parent;
-          left.setParent(this);
+        left = parent;
+        left.setParent(this);
       }
     }
   }

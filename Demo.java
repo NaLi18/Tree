@@ -1,7 +1,12 @@
 import java.util.Scanner;
 import java.io.*;
+/*
+ * Name:Na Li
+ * Lab: 2:45pm - 3:40pm, Monday
+ */
 
 public class Demo{
+  
   public static void main(String[] args)throws IOException
   {
     String filename;
@@ -69,7 +74,7 @@ public class Demo{
     System.out.println("delete some node from the tree");
     trees.printInorder();
     */
-    
+    /*
     //Debugger and Testing the balance method and deepth method and isBalance method
     trees.balance();
     //System.out.println(trees.getRoot().getValue());
@@ -78,8 +83,9 @@ public class Demo{
     //System.out.println(trees.getRoot().getRight().getRight().getValue());
     //System.out.println(trees.getRoot().getRight().getRight().getParent().getValue());
     //System.out.println(trees.getRoot().getRight().getRight().getRight().getValue());
+    System.out.print("The right deepth of the tree is "+trees.rightDeepth());
+    System.out.println(" the left deepth of the tree is "+trees.leftDeepth());
     trees.balance();
-    System.out.println("The right deepth of the tree is "+trees.rightDeepth());
-    System.out.println("The left deepth of the tree is "+trees.leftDeepth());
+    */
   }
 }

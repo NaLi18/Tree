@@ -1,11 +1,13 @@
+/*
+ * Name:Na Li
+ * Lab: 2:45pm - 3:40pm, Monday
+ */
 public class Tree{
-  
   private Node root;
-  private int size;
+  
   //default constructor 
   public Tree(){
     root = null;
-    size = 0;
   }
   /*
    * return the root value of the tree
@@ -221,7 +223,8 @@ public class Tree{
       System.out.println("The tree are balance now");
     }
     else {
-      System.out.println("The tree are unbalance, Now make it balance");
+      System.out.println("The tree are unbalance, because the right deepth "+rightDeepth()+" not close to the left "+leftDeepth());
+      System.out.println("Now, making it balance");
       if(this.leftDeepth() > this.rightDeepth()){
         m = (leftDeepth()+rightDeepth())/2;
         for(int i=0; i<m; i++){
@@ -244,12 +247,15 @@ public class Tree{
         }
         System.out.println("The root become "+temp.getValue());
         root = temp;
+        if(temp.getLeft()!=null){
         temp.getRight().move(temp.getLeft());
+        }
         temp.setLeft(temp.getParent());
         root.setParent(null);
         temp = temp.getLeft();
         temp.switchNode();
         root.getLeft().setParent(root);
+        root.setParent(null);
       }
       }
     }
