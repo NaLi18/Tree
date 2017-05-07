@@ -72,4 +72,30 @@ public class Node{
           this.right = n;
       }
   }
+  public void switchNode(){
+    if(this.parent!=null){
+      if(this.parent.getValue().compareTo(str)>0){
+      this.parent.setParent(this);
+      if(this.right==null){
+        this.right =this.parent; 
+      }
+      else{
+        this.left.move(this.right);
+        this.right = this.parent;
+      }
+      this.right.switchNode();
+      }
+      else{
+        this.parent.setParent(this);
+        if(this.left==null){
+          this.left =this.parent; 
+        }
+        else{
+          this.right.move(this.left);
+          this.left = this.parent;
+        }
+        this.left.switchNode();
+      }
+    }
+  }
 }

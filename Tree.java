@@ -207,10 +207,15 @@ public class Tree{
    * Balance the tree
    */
   public void balance(){
+    Node temp = root;
+    int m;
     if(isBalance()){
       System.out.println("The tree are balance now");
     }
-  }
+    else {
+      
+    }
+    }
   private int leftDeepth(){
     int depth = 0;
     Node temp = root;
